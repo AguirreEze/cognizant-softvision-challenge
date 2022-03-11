@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Candidate } from "types/candidate";
+import { CandidateType } from "types/candidate";
 
-const initialData: Candidate[] = [
+const initialData: CandidateType[] = [
   {
     id: "goncy",
     name: "Gonzalo Pozzo",
@@ -18,7 +18,7 @@ const initialData: Candidate[] = [
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Candidate[]>
+  res: NextApiResponse<CandidateType[]>
 ) {
   res.status(200).json(initialData);
 }
