@@ -1,9 +1,16 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import { useEffect, useState } from "react";
+import { getCandidateList } from "services/candidates";
+import { CandidateType } from "types/candidate";
+import styles from "styles/Home.module.css";
+import Candidate from "components/candidate";
 
 const Home: NextPage = () => {
+  const [candidatesList, setCandidatesList] = useState<CandidateType[]>([]);
+  useEffect(() => {
+    getCandidateList<CandidateType[]>().then(setCandidatesList);
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -15,6 +22,28 @@ const Home: NextPage = () => {
       <main>
         <img alt="Softvision" src="logo.png" width={320} />
         <h1 className={styles.title}>Lets get this party started</h1>
+        <section className={styles.grid}>
+          <article className={styles.card}>
+            <h2>Entrevista Inicial</h2>
+            <ul className={styles.list}>
+              {candidatesList.map((candidate) => (
+                <Candidate candidate={candidate} key={candidate.id} />
+              ))}
+            </ul>
+          </article>
+          <article className={styles.card}>
+            <h2>Entrevista Técnica</h2>
+          </article>
+          <article className={styles.card}>
+            <h2>Oferta</h2>
+          </article>
+          <article className={styles.card}>
+            <h2>Asignación</h2>
+          </article>
+          <article className={styles.card}>
+            <h2>Rechazo</h2>
+          </article>
+        </section>
       </main>
     </div>
   );
