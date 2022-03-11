@@ -17,6 +17,14 @@ const Home: NextPage = () => {
       (candidate) => candidate.step.toLowerCase() === step.toLowerCase()
     );
   };
+
+  const updateCandidate = (candidate: CandidateType) => {
+    const updatedList = candidatesList.map((e) => {
+      return e.id === candidate.id ? candidate : e;
+    });
+    setCandidatesList(updatedList);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
