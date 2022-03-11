@@ -2,3 +2,24 @@
   font-size: 24px;
   font-weight: normal;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0 1rem;
+  width: 100%;
+}
+
+.card {
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
