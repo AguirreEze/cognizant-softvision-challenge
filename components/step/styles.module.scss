@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+.empty {
+  text-align: center;
+  margin: auto 0 auto;
+  color: #0007;
+  font-weight: normal;
+}

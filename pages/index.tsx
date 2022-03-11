@@ -4,13 +4,19 @@ import { useEffect, useState } from "react";
 import { getCandidateList } from "services/candidates";
 import { CandidateType } from "types/candidate";
 import styles from "styles/Home.module.css";
-import Candidate from "components/candidate";
+import Step from "components/step";
 
 const Home: NextPage = () => {
   const [candidatesList, setCandidatesList] = useState<CandidateType[]>([]);
   useEffect(() => {
     getCandidateList<CandidateType[]>().then(setCandidatesList);
   }, []);
+
+  const getStepList = (step: string): CandidateType[] => {
+    return candidatesList.filter(
+      (candidate) => candidate.step.toLowerCase() === step.toLowerCase()
+    );
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -23,26 +29,17 @@ const Home: NextPage = () => {
         <img alt="Softvision" src="logo.png" width={320} />
         <h1 className={styles.title}>Lets get this party started</h1>
         <section className={styles.grid}>
-          <article className={styles.card}>
-            <h2>Entrevista Inicial</h2>
-            <ul className={styles.list}>
-              {candidatesList.map((candidate) => (
-                <Candidate candidate={candidate} key={candidate.id} />
-              ))}
-            </ul>
-          </article>
-          <article className={styles.card}>
-            <h2>Entrevista Técnica</h2>
-          </article>
-          <article className={styles.card}>
-            <h2>Oferta</h2>
-          </article>
-          <article className={styles.card}>
-            <h2>Asignación</h2>
-          </article>
-          <article className={styles.card}>
-            <h2>Rechazo</h2>
-          </article>
+          <Step
+            name={"Entrevista Inicial"}
+            list={getStepList("Entrevista Inicial")}
+          />
+          <Step
+            name={"Entrevista Técnica"}
+            list={getStepList("Entrevista Técnica")}
+          />
+          <Step name={"Oferta"} list={getStepList("Oferta")} />
+          <Step name={"Asignación"} list={getStepList("Asignación")} />
+          <Step name={"Rechazo"} list={getStepList("Asignación")} />
         </section>
       </main>
     </div>
