@@ -1,4 +1,4 @@
-export interface Candidate {
+export interface CandidateType {
   id: string;
   name: string;
   step:
