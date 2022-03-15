@@ -18,6 +18,10 @@ const Home: NextPage = () => {
     );
   };
 
+  const addCandidate = (candidate: CandidateType) => {
+    setCandidatesList([...candidatesList, candidate]);
+  };
+
   const updateCandidate = (candidate: CandidateType) => {
     const updatedList = candidatesList.map((e) => {
       return e.id === candidate.id ? candidate : e;
@@ -41,6 +45,8 @@ const Home: NextPage = () => {
             name={"Entrevista Inicial"}
             list={getStepList("Entrevista Inicial")}
             updateCandidate={updateCandidate}
+            initial={true}
+            addCandidate={addCandidate}
           />
           <Step
             name={"Entrevista Técnica"}

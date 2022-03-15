@@ -1,14 +1,23 @@
 import { CandidateType } from "types/candidate";
 import styles from "./styles.module.scss";
 import Candidate from "components/candidate";
+import CandidateForm from "components/CandidateForm";
 
 interface Iprops {
   name: string;
   list: CandidateType[];
   updateCandidate: Function;
+  initial?: boolean;
+  addCandidate?: Function;
 }
 
-export default function Step({ name, list, updateCandidate }: Iprops) {
+export default function Step({
+  name,
+  list,
+  updateCandidate,
+  initial,
+  addCandidate,
+}: Iprops) {
   return (
     <article className={styles.card}>
       <h2>{name}</h2>
@@ -25,6 +34,7 @@ export default function Step({ name, list, updateCandidate }: Iprops) {
       ) : (
         <h3 className={styles.empty}>No hay candidatos</h3>
       )}
+      {initial && <CandidateForm addCandidate={addCandidate} />}
     </article>
   );
 }
