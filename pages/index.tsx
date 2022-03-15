@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     );
   };
 
-  const addCandidate = (candidate: CandidateType) => {
+  const addCandidate = (candidate: CandidateType): void => {
     const updatedList: CandidateType[] = [...candidatesList, candidate];
     setCandidatesList(updatedList);
     localStorage.setItem(
@@ -30,8 +30,8 @@ const Home: NextPage = () => {
     );
   };
 
-  const updateCandidate = (candidate: CandidateType) => {
-    const updatedList = candidatesList.map((e) => {
+  const updateCandidate = (candidate: CandidateType): void => {
+    const updatedList: CandidateType[] = candidatesList.map((e) => {
       return e.id === candidate.id ? candidate : e;
     });
     setCandidatesList(updatedList);
