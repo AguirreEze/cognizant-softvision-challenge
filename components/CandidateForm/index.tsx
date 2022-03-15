@@ -3,7 +3,7 @@ import { CandidateType } from "types/candidate";
 import { v4 as uuid } from "uuid";
 
 interface Iprops {
-  addCandidate: Function;
+  addCandidate?: Function;
 }
 
 export default function CandidateForm({ addCandidate }: Iprops) {
@@ -20,7 +20,7 @@ export default function CandidateForm({ addCandidate }: Iprops) {
       comments,
       step: "Entrevista inicial",
     };
-    addCandidate(dataToSave);
+    addCandidate && addCandidate(dataToSave);
     setName("");
     setComments("");
   };
