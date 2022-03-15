@@ -21,6 +21,7 @@ export default function CandidateForm({ addCandidate }: Iprops) {
       step: "Entrevista inicial",
     };
     addCandidate && addCandidate(dataToSave);
+    setShowForm(false);
     setName("");
     setComments("");
   };
