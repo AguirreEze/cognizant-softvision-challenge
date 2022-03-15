@@ -5,16 +5,21 @@ import Candidate from "components/candidate";
 interface Iprops {
   name: string;
   list: CandidateType[];
+  updateCandidate: Function;
 }
 
-export default function Step({ name, list }: Iprops) {
+export default function Step({ name, list, updateCandidate }: Iprops) {
   return (
     <article className={styles.card}>
       <h2>{name}</h2>
       {list.length ? (
         <ul className={styles.list}>
           {list.map((candidate) => (
-            <Candidate candidate={candidate} key={candidate.id} />
+            <Candidate
+              candidate={candidate}
+              key={candidate.id}
+              updateCandidate={updateCandidate}
+            />
           ))}
         </ul>
       ) : (

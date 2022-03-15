@@ -40,14 +40,28 @@ const Home: NextPage = () => {
           <Step
             name={"Entrevista Inicial"}
             list={getStepList("Entrevista Inicial")}
+            updateCandidate={updateCandidate}
           />
           <Step
             name={"Entrevista Técnica"}
             list={getStepList("Entrevista Técnica")}
+            updateCandidate={updateCandidate}
           />
-          <Step name={"Oferta"} list={getStepList("Oferta")} />
-          <Step name={"Asignación"} list={getStepList("Asignación")} />
-          <Step name={"Rechazo"} list={getStepList("Asignación")} />
+          <Step
+            name={"Oferta"}
+            list={getStepList("Oferta")}
+            updateCandidate={updateCandidate}
+          />
+          <Step
+            name={"Asignación"}
+            list={getStepList("Asignación")}
+            updateCandidate={updateCandidate}
+          />
+          <Step
+            name={"Rechazo"}
+            list={getStepList("Rechazo")}
+            updateCandidate={updateCandidate}
+          />
         </section>
       </main>
     </div>
