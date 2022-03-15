@@ -2,7 +2,7 @@
 
 ![Cognizant Softvision](./public/logo.png "Cognizant Softvision")
 
-[Deploy here]("https://cognizant-softvision-challenge-aguirreeze.vercel.app")
+[Deploy here](https://cognizant-softvision-challenge-aguirreeze.vercel.app)
 
 Necesitamos una manera interna, fácil de poder administrar nuestros candidatos basado en que paso se encuentran, vivimos en un universo paralelo donde trello ni kanban existen pero se nos ocurrió una genial idea donde nos organizamos usando columnas y filas.
 
