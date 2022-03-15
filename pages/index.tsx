@@ -9,7 +9,10 @@ import Step from "components/step";
 const Home: NextPage = () => {
   const [candidatesList, setCandidatesList] = useState<CandidateType[]>([]);
   useEffect(() => {
-    getCandidateList<CandidateType[]>().then(setCandidatesList);
+    const localData = localStorage.getItem("cognizant-softvision-challenge");
+    localData
+      ? setCandidatesList(JSON.parse(localData))
+      : getCandidateList<CandidateType[]>().then(setCandidatesList);
   }, []);
 
   const getStepList = (step: string): CandidateType[] => {
@@ -19,7 +22,12 @@ const Home: NextPage = () => {
   };
 
   const addCandidate = (candidate: CandidateType) => {
-    setCandidatesList([...candidatesList, candidate]);
+    const updatedList: CandidateType[] = [...candidatesList, candidate];
+    setCandidatesList(updatedList);
+    localStorage.setItem(
+      "cognizant-softvision-challenge",
+      JSON.stringify(updatedList)
+    );
   };
 
   const updateCandidate = (candidate: CandidateType) => {
@@ -27,6 +35,10 @@ const Home: NextPage = () => {
       return e.id === candidate.id ? candidate : e;
     });
     setCandidatesList(updatedList);
+    localStorage.setItem(
+      "cognizant-softvision-challenge",
+      JSON.stringify(updatedList)
+    );
   };
 
   return (
