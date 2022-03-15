@@ -2,6 +2,8 @@
 
 ![Cognizant Softvision](./public/logo.png "Cognizant Softvision")
 
+[Deploy here]("https://cognizant-softvision-challenge-aguirreeze.vercel.app")
+
 Necesitamos una manera interna, fácil de poder administrar nuestros candidatos basado en que paso se encuentran, vivimos en un universo paralelo donde trello ni kanban existen pero se nos ocurrió una genial idea donde nos organizamos usando columnas y filas.
 
 Debemos implementar una columna por cada uno de los pasos de nuestro proceso (`"Entrevista inicial" | "Entrevista técnica" | "Oferta" | "Asignación" | "Rechazo"`), donde podamos tener candidatos que podamos mover entre columnas, una a la vez, sin saltar columnas. También podemos agregar candidatos a la primera columna y cada candidato puede tener opcionalmente un texto de comentario para saber como le está yendo en el proceso. Los candidatos pueden avanzar o retroceder con botones que se encuentran dentro de sus tarjetas.
