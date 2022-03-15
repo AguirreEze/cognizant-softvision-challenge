@@ -8,4 +8,5 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 0 1rem;
   width: 100%;
+  place-items: flex-start;
 }
