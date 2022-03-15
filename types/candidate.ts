@@ -9,3 +9,10 @@ export interface CandidateType {
     | "Rechazo";
   comments: string;
 }
+
+export let StepType:
+  | "Entrevista inicial"
+  | "Entrevista técnica"
+  | "Oferta"
+  | "Asignación"
+  | "Rechazo";
